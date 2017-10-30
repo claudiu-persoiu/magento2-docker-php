@@ -1,4 +1,4 @@
-FROM php:7.0-fpm
+FROM php:7.1-fpm
 MAINTAINER Claudiu Persoiu claudiu@persoiu.ro
 
 ENV WWW_DATA_UID 1000
