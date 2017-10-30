@@ -42,11 +42,13 @@ ENV APP_MAGE_MODE developer
 COPY conf/php.ini /usr/local/etc/php/
 COPY conf/php-fpm.conf /usr/local/etc/
 COPY bin/entrypoint.sh /usr/local/bin/
+RUN chmod a+x /usr/local/bin/entrypoint.sh
 
 WORKDIR /var/www/html
 
-CMD ["/usr/local/bin/entrypoint.sh"]
-
-# Xdebug
 RUN pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug
 COPY conf/xdebug.ini /usr/local/etc/php/conf.d/
+RUN cat /usr/local/etc/php/conf.d/xdebug.ini >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN rm /usr/local/etc/php/conf.d/xdebug.ini
+
+CMD ["/usr/local/bin/entrypoint.sh"]

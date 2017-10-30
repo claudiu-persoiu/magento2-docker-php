@@ -2,8 +2,8 @@
 BASE_DIR=/var/www
 SRC_DIR=$BASE_DIR/html
 
-usermod -u $WWW_DATA_UID www-data
-groupmod -g $WWW_DATA_GID www-data
+usermod -u ${WWW_DATA_UID=1000} www-data
+groupmod -g ${WWW_DATA_GID=1000} www-data
 
 if [ -d $BASE_DIR/.composer ]; then
   rm -rf $SRC_DIR/var/composer_home
