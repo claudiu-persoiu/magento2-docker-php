@@ -10,4 +10,8 @@ if [ -d $BASE_DIR/.composer ]; then
   su -c "ln -s $BASE_DIR/.composer $SRC_DIR/var/composer_home" -s /bin/sh www-data
 fi
 
+# for the www-data user to use
+echo "PHP_MEMORY_LIMIT=${PHP_MEMORY_LIMIT}" >> /etc/environment
+echo "APP_MAGE_MODE=${APP_MAGE_MODE}" >> /etc/environment
+
 /usr/local/sbin/php-fpm

@@ -22,3 +22,11 @@ For xdebug there are the following config settings:
   XDEBUG_CONFIG
   PHP_IDE_CONFIG
 ```
+
+To run a command on the machine with the www-data user `run.sh`.
+For example:
+
+```
+  $ docker exec -it <container_id_or_name> run.sh php bin/magento
+  $ docker exec -it <container_id_or_name> run.sh composer
+```
