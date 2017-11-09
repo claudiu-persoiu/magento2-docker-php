@@ -15,6 +15,9 @@ Magento2 docker container
   PHP_PM_START_SERVERS 4
   PHP_PM_MIN_SPARE_SERVERS 2
   PHP_PM_MAX_SPARE_SERVERS 6
+  
+  XDEBUG_PORT 9000
+  XDEBUG_NESTING_LEVEL 512
 ```
 
 For xdebug there are the following config settings:
