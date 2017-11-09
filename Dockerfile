@@ -39,6 +39,9 @@ ENV PHP_PM_MIN_SPARE_SERVERS 2
 ENV PHP_PM_MAX_SPARE_SERVERS 6
 ENV APP_MAGE_MODE developer
 
+ENV XDEBUG_PORT 9000
+ENV XDEBUG_NESTING_LEVEL 512
+
 COPY conf/php.ini /usr/local/etc/php/
 COPY conf/php-fpm.conf /usr/local/etc/
 COPY bin/* /usr/local/bin/
